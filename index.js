@@ -36,7 +36,7 @@ router.get('/getData', (req, res) => {
         .then(function (response) {
             res.setHeader("Access-Control-Allow-origin", "http://localhost:3001");
             console.log(getTitles(response.data.results));
-            res.status(200).send(getTitles(response.data.results));
+            res.status(200).send({ data: getTitles(response.data.results) });
         });
 });
 
